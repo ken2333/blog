@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './components/Home.vue'
 import  Hot from  './components/Hot'
 import    Regist from './components/Regist'
+import  Login from './components/Login'
 Vue.use(Router)
 
 export default new Router({
@@ -23,7 +24,13 @@ export default new Router({
         path:"/regist",
           name:'regist',
           component:Regist
+      },
+      {
+        path:"/login",
+          name:"login",
+          component:Login
       }
+
 
   ]
 })

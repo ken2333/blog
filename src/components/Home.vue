@@ -1,6 +1,6 @@
 <template>
 <div>
-  <h1>123</h1>
+  <input type="button" @click="test" value="test"/>
 </div>
 </template>
 
@@ -10,6 +10,12 @@
 export default {
   name: 'home',
   components: {
-  }
+  },
+    methods:{
+      test:function () {
+          alert("123")
+          console.log(this.usersession)
+      }
+    }
 }
 </script>

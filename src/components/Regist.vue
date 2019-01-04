@@ -1,6 +1,6 @@
 <template>
     <el-row :gutter="18" >
-        <el-col :span="8" :offset="6">
+        <el-col :span="8" :offset="7">
             <el-form label-position="left" label-width="110px" :model="form" :rules="rules" status-icon
                      ref="form">
                 <el-form-item label="用户名" prop="username">
@@ -11,6 +11,9 @@
                 </el-form-item>
                 <el-form-item label="再次输入密码"  prop="check">
                     <el-input type="password"  v-model="form.password2" ></el-input>
+                </el-form-item>
+                <el-form-item label="电子邮件"  prop="email">
+                    <el-input type="text"  v-model="form.email" ></el-input>
                 </el-form-item>
                 <el-form-item>
                     <el-button type="primary" @click="submitForm('form')">提交</el-button>
@@ -38,12 +41,13 @@
                 } else {
                     callback();
                 }
-            }
+            };
             return {
                 form:{
                     username:"",
                     password:"",
                     password2:"",
+                    eamil:"",
                 },
                 rules:{
                     username: [
@@ -58,6 +62,10 @@
                     password:[
                         {required:true,message:'请输入密码',trigger:"blur"},
                         { min: 6, max: 15, message: '长度在 6 到 15 个字符', trigger: 'blur' },
+                    ],
+                    email:[
+                        {required:true,message:"请填写邮箱",trigger:"blur"},
+                        { type:"email",trigger:"blur",message:"请输入正确的邮箱地址!"}
                     ]
                 }
             }
