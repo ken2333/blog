@@ -59,7 +59,7 @@ export default {
   },
     methods:{
       test:function () {
-          alert("123")
+
           console.log(this.usersession)
       }
     }

@@ -6,6 +6,7 @@ import    Regist from './components/Regist'
 import  Login from './components/Login'
 import  BlogList from './components/Home/BlogList'
 import  Recommend  from './components/Home/Recommend'
+import  BlogDetail from './components/Home/BlogDetail'
 Vue.use(Router)
 
 export default new Router({
@@ -31,8 +32,12 @@ export default new Router({
                path:"recommend",
                  name:"recommend",
                  component:Recommend
+             },
+             {
+                 path:"blogDetail_*",
+                 name:"blogDetail",
+                 component:BlogDetail
              }
-
           ]
       },
       {

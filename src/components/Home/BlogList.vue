@@ -1,8 +1,8 @@
 <template>
      <!--通过使用指令的方式来使用loading组件-->
-    <div v-loading.fullscreen.lock="loading"  element-loading-text="正在加载中"  >
-        <ul v-for=" user in data">
-            <router-link :to="user.email">{{user.name}}</router-link>
+    <div v-loading="loading"   >
+        <ul v-for="user in data">
+            <router-link  :to="{path: 'blogDetail_' + user.id}">{{user.name}}</router-link>
         </ul>
     </div>
 </template>
@@ -25,7 +25,7 @@
               this.$http.get("http://jsonplaceholder.typicode.com/users").then(value=>{
                  this.data=value.body;
                  //关闭加载的动画
-                   this.$loading().close();
+                  this.$loading().close();
               })
             }
         },
