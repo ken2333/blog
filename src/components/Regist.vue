@@ -1,5 +1,5 @@
 <template>
-    <el-row :gutter="18" >
+    <el-row >
         <el-col :span="8" :offset="7">
             <el-form label-position="left" label-width="110px" :model="form" :rules="rules" status-icon
                      ref="form">

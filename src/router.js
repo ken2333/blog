@@ -4,6 +4,8 @@ import Home from './components/Home.vue'
 import  Hot from  './components/Hot'
 import    Regist from './components/Regist'
 import  Login from './components/Login'
+import  BlogList from './components/Home/BlogList'
+import  Recommend  from './components/Home/Recommend'
 Vue.use(Router)
 
 export default new Router({
@@ -12,9 +14,27 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      redirect:"/home"
     },
+      {
+          path: '/home',
+          name: 'home',
+          component: Home,
+          redirect:"/home/recommend",
+         children:[
+              {
+                  path:"list_*",
+                  name:"blogList",
+                  component:BlogList,
+              },
+             {
+               path:"recommend",
+                 name:"recommend",
+                 component:Recommend
+             }
+
+          ]
+      },
       {
         path:"/hot",
           name:"hot",

@@ -3,8 +3,8 @@
         <el-col :span="5" :offset="9">
             <el-menu   class="el-menu-demo" mode="horizontal" :router=true>
                 <el-menu-item index="/">首页</el-menu-item>
-                <el-menu-item index="hot">热点</el-menu-item>
-                <el-menu-item index="3" >写博客</el-menu-item>
+                <el-menu-item index="/hot">热点</el-menu-item>
+                <el-menu-item index="/3" >写博客</el-menu-item>
             </el-menu>
         </el-col>
         <el-col :span="3" :offset="5"  >
