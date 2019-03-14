@@ -7,6 +7,7 @@ import  Login from './components/Login'
 import  BlogList from './components/Home/BlogList'
 import  Recommend  from './components/Home/Recommend'
 import  BlogDetail from './components/Home/BlogDetail'
+import  WriteBlog from './components/WriteBlog'
 Vue.use(Router)
 
 export default new Router({
@@ -54,8 +55,11 @@ export default new Router({
         path:"/login",
           name:"login",
           component:Login
+      },
+      {
+          path:"/writeBlog",
+          name:"WriteBlog",
+          component:WriteBlog
       }
-
-
   ]
 })
